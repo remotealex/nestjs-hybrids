@@ -1,6 +1,8 @@
 # compiled output
 /dist
 /node_modules
+.cache
+/public/bundle.js*
 
 # Logs
 logs
@@ -32,3 +34,6 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# DB
+dump.rdb
