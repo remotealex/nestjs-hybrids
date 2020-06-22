@@ -10,20 +10,19 @@ export class AppController {
   @Render('index')
   @Public()
   homeView(@User() user) {
-    return { title: 'Home page', user };
+    return { title: 'Home page', user, userString: JSON.stringify(user) };
   }
 
   @Get('about')
   @Render('about')
   @Public()
   aboutView(@User() user) {
-    return { title: 'About page', user };
+    return { title: 'About page', user, userString: JSON.stringify(user) };
   }
 
   @Get('profile')
   @Render('profile')
   profileView(@User() user) {
-    console.log(user);
-    return { title: 'Your profile', user };
+    return { title: 'Your profile', user, userString: JSON.stringify(user) };
   }
 }

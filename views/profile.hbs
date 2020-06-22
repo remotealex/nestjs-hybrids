@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Home page</title>
+  <title>Your profile</title>
   <script src="/bundle.js"></script>
 </head>
 
 <body>
   <custom-header title-text="{{title}}" user="{{userString}}"></custom-header>
-  <simple-counter count="10"></simple-counter>
+  <div>Your username: {{ user.username }}</div>
 </body>
 
 </html>
