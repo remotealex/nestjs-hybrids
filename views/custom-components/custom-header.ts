@@ -1,4 +1,6 @@
-import { html, define, Hybrids, property } from 'hybrids';
+import { html, define, Hybrids } from 'hybrids';
+
+import { parse } from '../helpers';
 
 interface CustomHeader extends HTMLElement {
   titleText?: string;
@@ -6,14 +8,9 @@ interface CustomHeader extends HTMLElement {
   userObj?: { username: string };
 }
 
-const parse = (keyToParse: string, keyToAssign: string) =>
-  property('', host => {
-    host[keyToAssign] = JSON.parse(host[keyToParse]);
-  });
-
 export const CustomHeader: Hybrids<CustomHeader> = {
   titleText: '',
-  user: parse('user', 'userObj'),
+  user: parse('user', 'userObj'), // Parse the user JSON
   render: ({ titleText, userObj }) => {
     return html`
       ${titleText &&
